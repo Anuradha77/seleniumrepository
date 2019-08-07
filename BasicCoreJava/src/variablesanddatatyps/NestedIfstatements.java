@@ -27,14 +27,21 @@ public class NestedIfstatements {
 					{
 						System.out.println("a is greatest");
 					}
+				}
 						
 					//visibility of outbox
-					if (a>c)
+					else if(a>=c)
 					{
 						System.out.println("a is greatest");
 					}
-				}
-		
+				
+				else
+					{
+						System.out.println("a is not greatest");
+					}
 	}
-
 }
+		
+	
+
+
