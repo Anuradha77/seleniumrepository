@@ -11,6 +11,7 @@ public class Demo {
 		obj.update();
 		obj.formatting();
 		obj.filter();
+		;
 		
 		
 	}	
