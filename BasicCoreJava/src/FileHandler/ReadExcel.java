@@ -34,6 +34,9 @@ public class ReadExcel {
 		String value=cell.getStringCellValue();
 		System.out.println(value);
 		
+		System.out.println(row.getLastCellNum());
+		System.out.println(sheet.getLastRowNum());
+		
 		
 		
 	}
