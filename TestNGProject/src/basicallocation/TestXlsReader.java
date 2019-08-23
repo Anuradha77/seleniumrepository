@@ -1,4 +1,4 @@
-package FileHandler;
+package basicallocation;
 
 import java.io.IOException;
 
@@ -6,7 +6,7 @@ public class TestXlsReader {
 
 	public static void main(String[] args) throws IOException 
 	{
-		Xls_reader xl= new Xls_reader("E:\\seleniumrepository\\BasicCoreJava\\src\\FileHandler\\AnuTestdata.xls");
+		Xls_reader xl= new Xls_reader("E:\\seleniumrepository\\TestNGProject\\src\\basicallocation\\AnuTestdata.xls");
 	
 		int rows=xl.getRowCount("Sheet1");
 		int cols=xl.getColCount("Sheet1");
