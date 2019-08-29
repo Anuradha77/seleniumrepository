@@ -4,8 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class FirstSeleniumClass {
-	
+public class TestCalss1 {
+
+
 	ChromeDriver dr;
 	@Test
 	public void login()
@@ -27,15 +28,11 @@ public class FirstSeleniumClass {
 		
 	}
 	
-	@Test
+	@Test(dependsOnMethods =("login") )
 	public void logout()
 	{
 	
-		dr.findElement(By.linkText("SIGN-OFF")).click();
+		//dr.findElement(By.linkText("SIGN-OFF")).click();
 	}
 	
-	
-
-	
-
 }
