@@ -28,7 +28,7 @@ public class TestCalss1 {
 		
 	}
 	
-	@Test(dependsOnMethods =("login") )
+	@Test(dependsOnMethods = {"login"})
 	public void logout()
 	{
 	

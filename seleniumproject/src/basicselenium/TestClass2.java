@@ -2,6 +2,7 @@ package basicselenium;
 
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -43,6 +44,57 @@ public class TestClass2
 		Thread.sleep(2000);
 		sel.selectByVisibleText("4");//4th value of drop down select
 		
+		/*
+		 * Thread.sleep(2000); 
+		 * WebElement depart= dr.findElement(By.name("fromPort"));
+		 * 
+		 * Select sel1 =new Select(depart); 
+		 * sel1.selectByValue("Frankfurt");
+		 * 
+		 * Thread.sleep(2000); 
+		 * sel1.selectByValue("New York");
+		 */
+		
+		/*Thread.sleep(2000);
+		WebElement month=dr.findElement(By.name("fromMonth"));
+		Select sel2=new Select(month);
+		
+		sel2.selectByValue("2");
+		sel2.selectByIndex(2);
+		
+		Thread.sleep(2000);
+		WebElement day=dr.findElement(By.name("fromDay"));
+		Select sel3=new Select(day);
+		
+		sel3.selectByValue("28");
+		sel3.selectByIndex(27);
+		
+		Thread.sleep(2000);
+		WebElement port=dr.findElement(By.name("toPort"));
+		Select sel4=new Select(port);
+		
+		sel4.selectByValue("London");
+		
+		Thread.sleep(2000);
+		WebElement tomonth=dr.findElement(By.name("toMonth"));
+		Select sel5=new Select(tomonth);
+		
+		sel5.selectByValue("2");
+		
+		
+		Thread.sleep(2000);
+		WebElement today=dr.findElement(By.name("toDay"));
+		Select sel6=new Select(today);
+		
+		sel6.selectByValue("29");
+		
+		Thread.sleep(2000);
+		WebElement servclass=dr.findElement(By.name("servClass"));
+		Select sel7=new Select(servclass);
+		
+		sel7.selectByValue("Business");*/
+		
+		
 		dr.findElement(By.name("findFlights")).click();//click on continue button 
 		
 		WebElement table= dr.findElement(By.xpath("//table[@cellpadding='2'][@cellspacing='1'][1]/tbody"));
@@ -58,6 +110,27 @@ public class TestClass2
 				System.out.println(c.getText());
 			}
 		}
+		dr.findElement(By.name("reserveFlights")).click();
+		
+		//for check box
+		dr.findElement(By.name("ticketLess")).click();
+		System.out.println(dr.findElement(By.name("ticketLess")).isSelected());
+		
+		WebElement country=dr.findElement(By.name("delCountry"));
+		
+		Select countrySel= new Select(country);
+		countrySel.selectByIndex(3);
+		
+		//to handle alert
+		Alert alt=dr.switchTo().alert();
+		System.out.println(alt.getText());
+		//alt.accept();
+		alt.dismiss();
+		
+		dr.findElement(By.name("buyFlights")).click();
+		//dr.close();
+		
+		System.out.println(dr.findElement(By.xpath("//font[@size='+1']")).getText());
 		
 		
 		
