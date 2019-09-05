@@ -1,19 +1,19 @@
 package basicselenium;
 
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class Flipkart1 
-{	
-	ChromeDriver dr;
+public class DragAndDrop {
+	
+
+
+ChromeDriver dr;
 	
 	@Test
 	public void test1()
@@ -35,18 +35,8 @@ public class Flipkart1
 		wait.until(ExpectedConditions.visibilityOf(dr.findElement(By.xpath("//a[text()='Shirts']"))));
 		dr.findElement(By.xpath("//a[text()='Shirts']")).click();
 		
-		String parent= dr.getWindowHandle();
-		wait.until(ExpectedConditions.visibilityOf(dr.findElement(By.xpath("//img[@class='_3togXc']")))).click();
-		
-		Set<String> wins=dr.getWindowHandles();
-		
-		for(String w:wins)
-		{
-			if (!w.equals(parent))
-			dr.switchTo().window(w);
-		}
-		dr.findElement(By.xpath("//input[@placeholder='Enter delivery pincode']")).sendKeys("412207");
-		
-	}
+		//drag and drop 
+		act.dragAndDropBy(dr.findElement(By.xpath("//div[@class='_3G9WVX oVjMho']/div[@class='_3aQU3C']")), 50, 0).build().perform();
 	
+	}
 }
